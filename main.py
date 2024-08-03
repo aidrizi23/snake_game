@@ -40,10 +40,12 @@ while gameon:
     # Detect collision with walls.
     if snake.turtles[0].xcor() <= -300 or snake.turtles[0].xcor() >= 300 or snake.turtles[0].ycor() <= -300 or snake.turtles[0].ycor() >= 300:
         gameon = False
+        score.reset()
 
 
     for turtle in snake.turtles[1:]:  # Skip the head
         if snake.turtles[0].distance(turtle) < 10:
             gameon = False
+            score.reset()
 
 screen.exitonclick()
